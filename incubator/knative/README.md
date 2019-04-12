@@ -66,7 +66,7 @@ You can use the command ```helm status <my-release> [--tls]``` to get a summary 
 | `build.buildWebhook.image`                       | Build Webhook Image                      | gcr.io/knative-releases/github.com/knative/build/cmd/webhook@sha256:488920f65763374a2886860e3b06c3b614ee685b68ec4fdbbcd08d849bb84b71  |
 | `build.buildWebhook.replicas`                    | Number of pods for Build Webhook         |    1      |
 | `build.credsInit.image`                          | credsInit Image                          |    gcr.io/knative-releases/github.com/knative/build/cmd/creds-init@sha256:ebf58f848c65c50a7158a155db7e0384c3430221564c4bbaf83e8fbde8f756fe    |
-| `build.gcsFetcher.image`                         | credsInit Image                          |    gcr.io/cloud-builders/gcs-fetcher      |
+| `build.gcsFetcher.image`                         | gcsFetcher Image                          |    gcr.io/cloud-builders/gcs-fetcher      |
 | `build.gitInit.image`                            | gitInit Image                            |    gcr.io/knative-releases/github.com/knative/build/cmd/git-init@sha256:09f22919256ba4f7451e4e595227fb852b0a55e5e1e4694cb7df5ba0ad742b23      |
 | `build.nop.image`                                | nop Image                                |    gcr.io/knative-releases/github.com/knative/build/cmd/nop@sha256:a318ee728d516ff732e2861c02ddf86197e52c6288049695781acb7710c841d4      |
 | `eventing.enabled`                         | Enable/Disable Knative Eventing          | `false`   |
