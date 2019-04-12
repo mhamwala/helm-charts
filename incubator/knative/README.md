@@ -102,7 +102,7 @@ You can use the command ```helm status <my-release> [--tls]``` to get a summary 
 | `eventingSources.eventDisplay.enabled`     | Enable/Disable A Knative Service that logs events received for use in samples and debugging. | `false`   |
 | `eventingSources.eventDisplay.eventDisplay.image`        | Event Display Image for Event Display | gcr.io/knative-releases/github.com/knative/eventing-sources/cmd/event_display@sha256:bf45b3eb1e7fc4cb63d6a5a6416cf696295484a7662e0cf9ccdf5c080542c21d   |
 | `eventingSources.gcpPubSub.enabled`        | Enable/Disable GCP Event Source          | `false`   |
-| `eventingSources.gcpPubSub.gcppubsubControllerManager.image`        | Google Cloud Platform Pub Sub Controller Manager Image | gcr.io/knative-releases/github.com/knative/eventing-sources/contrib/gcppubsub/cmd/controller@sha256:cde83a9f10c3c1340c93a9a9fd5ba76c9f7c33196fdab98a4c525f9cd5d3bb1f   |
+| `eventingSources.gcpPubSub.gcppubsubControllerManager.manager.image`        | Google Cloud Platform Pub Sub Controller Manager Image | gcr.io/knative-releases/github.com/knative/eventing-sources/contrib/gcppubsub/cmd/controller@sha256:cde83a9f10c3c1340c93a9a9fd5ba76c9f7c33196fdab98a4c525f9cd5d3bb1f   |
 | `serving.enabled`                          | Enable/Disable Knative Serving           | `true`    |
 | `serving.activator.image`                  | Activator Image                          | gcr.io/knative-releases/github.com/knative/serving/cmd/activator@sha256:60630ac88d8cb67debd1e2ab1ecd6ec3ff6cbab2336dda8e7ae1c01ebead76c0   |
 | `serving.activatorService.type`            | Activator Ingress Type                   | ClusterIP |
@@ -140,12 +140,12 @@ You can use the command ```helm status <my-release> [--tls]``` to get a summary 
 | `serving.monitoring.prometheus.prometheusSystem.replicas`    | Number of Prometheus System Pods  | 2  |
 | `serving.monitoring.prometheus.prometheusSystemDiscovery.type`    | Ingress Type for Prometheus System Discovery  | ClusterIP  |
 | `serving.monitoring.prometheus.prometheusSystemNp.type`    | Ingress Type for Prometheus System Np  | NodePort  |
-| `serving.monitoring.zipkinInMem.enabled`   | Enable/Disable Zipkin In Memory Metrics  | `true`    |
-| `serving.monitoring.zipkinInMem.zipkin.image`       | Zipkin In Memory Image                     | docker.io/openzipkin/zipkin:latest   |
-| `serving.monitoring.zipkinInMem.zipkin.replicas`    | Zipkin In Memory Image                     | 1             |
 | `serving.monitoring.zipkin.enabled`        | Enable/Disable Zipkin Metrics            | `false`   |
 | `serving.monitoring.zipkin.zipkin.image`       | Zipkin Image                     | docker.io/openzipkin/zipkin:latest   |
 | `serving.monitoring.zipkin.zipkin.replicas`    | Zipkin Image                     | 1             |
+| `serving.monitoring.zipkinInMem.enabled`   | Enable/Disable Zipkin In Memory Metrics  | `true`    |
+| `serving.monitoring.zipkinInMem.zipkin.image`       | Zipkin In Memory Image                     | docker.io/openzipkin/zipkin:latest   |
+| `serving.monitoring.zipkinInMem.zipkin.replicas`    | Zipkin In Memory Image                     | 1             |
 
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
