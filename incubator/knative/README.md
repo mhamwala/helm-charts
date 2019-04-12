@@ -13,14 +13,21 @@ This chart installs Knative components for Build, Serving, Eventing and Eventing
 
 In its default configuration, this chart will create the following Kubernetes resources:
 
-- Knative Build Pods:
+- Knative Build:
     - Deployments: controller, webhook
+    - Service: controller, webhook
+    - ServiceAccount: build-controller
 
-- Knative Serving Pods:
-    - Deployments: kube-state-metrics, knative-ingressgateway
-    - DaemonSet: fluent-ds
-    - ServiceAccounts: elasticsearch-logging, fluentd-ds, kube-state-metrics, node-exporter, prometheus-system, autoscaler, controller
-    - metric: revisionrequestcount, revisionrequestduration, revisionrequestsize, revisionresponsesize
+- Knative Serving:
+    - Deployments: activator, autoscaler, controller, webhook
+    - Service: activator-service, autoscaler, controller, webhook
+    - ServiceAccounts: controller, default
+
+- Knative Monitoring:
+    - Deployments: grafana, kibana-logging, kube-state-metrics
+    - Service: elasticsearch-logging, fluentd-dsgrafana, kibana-logging, kube-controller-manager, kube-state-metrics, node-exporter, prometheus-system-discovery, prometheus-system-np
+    - DaemonSet: fluentd-ds, node-exporter
+    - StatefulSet: elasticsearch-logging, prometheus-system
 
 ## Prerequisites
 - Requires kubectl v1.10+.
