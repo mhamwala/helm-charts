@@ -49,7 +49,7 @@ Please ensure that you have reviewed the [prerequisites](#prerequisites).
 
 1. Install Knative crds
 ```bash
-$ kubectl delete -f knative/all-crds.yaml
+$ kubectl install -f knative/all-crds.yaml
 ```
 
 2. Install the chart using helm cli:
