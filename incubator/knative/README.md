@@ -49,13 +49,12 @@ Please ensure that you have reviewed the [prerequisites](#prerequisites).
 
 1. Install Knative crds
 ```bash
-$ kubectl delete -f knative/all-crds.yaml
+$ kubectl install -f knative/all-crds.yaml
 ```
 
 2. Install the chart using helm cli:
 
 ```bash
-$ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com
 $ helm install incubator/knative --name <my-release> [--tls]
 ```
 
@@ -153,7 +152,6 @@ You can use the command ```helm status <my-release> [--tls]``` to get a summary 
 | `serving.monitoring.zipkinInMem.enabled`   | Enable/Disable Zipkin In Memory Metrics  | `true`    |
 | `serving.monitoring.zipkinInMem.zipkin.image`       | Zipkin In Memory Image                     | docker.io/openzipkin/zipkin:latest   |
 | `serving.monitoring.zipkinInMem.zipkin.replicas`    | Zipkin In Memory Image                     | 1             |
-
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
