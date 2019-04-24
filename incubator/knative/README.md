@@ -36,8 +36,8 @@ In its default configuration, this chart will create the following Kubernetes re
 enabled.
 - Istio - You should have Istio installed on your Kubernetes cluster. If you do not have it installed already you can do so by running the following commands:
 ```bash
-$ kubectl apply --filename https://github.com/knative/serving/releases/download/v0.5.0/istio-crds.yaml 
-$ kubectl apply --filename https://github.com/knative/serving/releases/download/v0.5.0/istio.yaml
+$ kubectl apply --filename https://github.com/knative/serving/releases/download/v0.5.1/istio-crds.yaml
+$ kubectl apply --filename https://github.com/knative/serving/releases/download/v0.5.1/istio.yaml
 ```
 or by following these steps:
 [Installing Istio](https://www.knative.dev/docs/install/knative-with-any-k8s/#installing-istio)
@@ -63,6 +63,24 @@ The command deploys Knative on the Kubernetes cluster in the default configurati
 You can use the command ```helm status <my-release> [--tls]``` to get a summary of the various Kubernetes artifacts that make up your Knative deployment.
 
 ### Configuration
+This chart is comprised of multiple subcharts which is illustrated in the structure below:
+```
+knative
+├── build
+├── eventing
+│   ├── in-memory-provisioner
+│   └── kafka-provisioner
+├── serving
+│   └── monitoring
+│       ├── elasticsearch
+│       ├── prometheus
+│       └── zipkin
+└── eventing sources
+    ├── camel
+    ├── event display
+    └── gcp pub sub
+```
+Disabling a chart will disable all charts below it in the chart structure. When enabling a subset of charts note that the parent charts are prerequisites and must be installed previously or in conjunction.
 
 | Parameter                                  | Description                              | Default |
 |--------------------------------------------|------------------------------------------|---------|
@@ -178,7 +196,12 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Limitations
 
-Look inside each subchart to view the their limitations.
+You must use the following namespaces to install the knative charts.
+- knative build -> `knative-build`
+- knative serving -> `knative-serving`
+- knative monitoring -> `knative-monitoring`
+- knative eventing -> `knative-eventing`
+- knative eventing sources -> `knative-sources`
 
 ## Documentation
 
