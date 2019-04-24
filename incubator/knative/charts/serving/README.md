@@ -41,6 +41,7 @@ $ kubectl install -f incubator/knative/all-crds.yaml
 2. Install the chart using helm cli:
 
 ```bash
+$ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 $ helm install incubator/knative/charts/serving --name <my-release> [--tls]
 ```
 
