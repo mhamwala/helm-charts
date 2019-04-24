@@ -5,7 +5,7 @@ This chart installs Knative components for Eventing Sources.
 
 ## Introduction
 
-This is a helm chart for installing Knative Eventing Sources which provides loosely coupled services that can be developed and deployed on independently on Kubernetes. Visit [knative eventing sources](https://github.com/knative/eventing-sources/blob/master/README.md) for more information.
+This is a helm chart for installing Knative Eventing Sources which provides loosely coupled services that can be developed and deployed on independently on Kubernetes. Visit [Knative Eventing Sources](https://github.com/knative/eventing-sources/blob/master/README.md) for more information.
 
 ## Chart Details
 
@@ -90,7 +90,7 @@ You must use `knative-sources` namespace to install Knative Eventing Sources.
 
 ## Documentation
 
-Documentation of the Knative eventing system can be found on the [Knative Eventing Sources Docs](https://github.com/knative/eventing-sources/blob/master/README.md).
+Documentation of the Knative Eventing Sources system can be found on the [Knative Eventing Sources Docs](https://github.com/knative/eventing-sources/blob/master/README.md).
 
 To learn more about Knative in general, see the [Overview](https://github.com/knative/docs/blob/master/README.md).
 
