@@ -23,7 +23,7 @@ rules:
   - patch
   - watch
 - apiGroups:
-  - extensions
+  - apps
   resources:
   - deployments
   verbs:
@@ -35,7 +35,7 @@ rules:
   - patch
   - watch
 - apiGroups:
-  - extensions
+  - apps
   resources:
   - deployments/finalizers
   verbs:
@@ -105,3 +105,11 @@ rules:
   - delete
   - patch
   - watch
+- apiGroups:
+  - policy
+  resourceNames:
+  - tekton-pipelines
+  resources:
+  - podsecuritypolicies
+  verbs:
+  - use
