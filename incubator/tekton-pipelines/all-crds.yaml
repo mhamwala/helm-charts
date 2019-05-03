@@ -7,7 +7,6 @@ spec:
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: ClusterTask
     plural: clustertasks
@@ -46,7 +45,6 @@ spec:
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: Pipeline
     plural: pipelines
@@ -60,14 +58,27 @@ kind: CustomResourceDefinition
 metadata:
   name: pipelineruns.tekton.dev
 spec:
+  additionalPrinterColumns:
+  - JSONPath: .status.conditions[?(@.type=="Succeeded")].status
+    description: The status of the pipelinrun
+    name: Status
+    type: string
+  - JSONPath: .status.startTime
+    name: StartTime
+    type: date
+  - JSONPath: .status.completionTime
+    name: CompletionTime
+    type: date
   group: tekton.dev
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: PipelineRun
     plural: pipelineruns
+    shortNames:
+    - pr
+    - prs
   scope: Namespaced
   subresources:
     status: {}
@@ -82,7 +93,6 @@ spec:
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: PipelineResource
     plural: pipelineresources
@@ -100,7 +110,6 @@ spec:
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: Task
     plural: tasks
@@ -114,14 +123,29 @@ kind: CustomResourceDefinition
 metadata:
   name: taskruns.tekton.dev
 spec:
+  additionalPrinterColumns:
+  - JSONPath: .status.conditions[?(@.type=="Succeeded")].status
+    name: Succeeded
+    type: string
+  - JSONPath: .status.conditions[?(@.type=="Succeeded")].reason
+    name: Reason
+    type: string
+  - JSONPath: .status.startTime
+    name: StartTime
+    type: date
+  - JSONPath: .status.completionTime
+    name: CompletionTime
+    type: date
   group: tekton.dev
   names:
     categories:
     - all
-    - knative
     - tekton-pipelines
     kind: TaskRun
     plural: taskruns
+    shortNames:
+    - tr
+    - trs
   scope: Namespaced
   subresources:
     status: {}

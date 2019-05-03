@@ -16,19 +16,19 @@ spec:
         - -stderrthreshold
         - INFO
         - -kubeconfig-writer-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter@sha256:ee2b1c75a5ebdf9e84f8ea399933540f277712d9493296f4b576c9e25efe4ba5
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter@sha256:a5a2a193f01c2dd47da7306560de3eb52db7b88a587a1a53a34e450c8e12bb57
         - -creds-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init@sha256:dd7e347128e0dd1f80e4e419606fa1e204bc7b98fc981d74f068c192df26c410
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init@sha256:a8d00fe67962f6bb1cf223b0d9988c41aee0bf459c03f1e75f171cdc31fdf525
         - -git-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init@sha256:48cd443a758f049763ddc95921b72c2cf3b3e7d27c1660a76b7aa12d08f94a74
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init@sha256:68636c92fabf75e9f960e2bd6fd29f3d0932e945a14e0bfb1ac89d0dd2d45d79
         - -nop-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop@sha256:edf92a9d7e6f74cdc4a61b0ac62458d82e95e3786e479b789f41ffea67783183
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop@sha256:7673de6ccea5385df2ef92ec1afd77b2654b2686888595d23d6f42ec4ec810ca
         - -bash-noop-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/bash@sha256:ead4d12526c55ab3352b930920b7cb27301aa75daad9714838d15896a7a2d05b
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/bash@sha256:8c33726ee8a194f04cedb6cd612d16471ffb4b2c5c160e2927d0119ab98428b1
         - -gsutil-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/gsutil@sha256:9ba7900cfc2c068611dec0e343ea62deabdf13c6895bad0403a5d629c0832064
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/gsutil@sha256:7ee20ca5428358e766086a217b7d27dba56960dbcb4ce705dd0db3e551cd06fd
         - -entrypoint-image
-        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint@sha256:6eaa3e12f13089d2eab2072d5eaf789e1f2001565901b963034333f3dde21b3f
+        - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint@sha256:d35d81ea85babd9c43b70eb0aa225c59b44d5b32624c40d6ae8aeb0a65def8fb
         image: {{ .Values.tektonPipelinesController.image }}
         name: tekton-pipelines-controller
         volumeMounts:
