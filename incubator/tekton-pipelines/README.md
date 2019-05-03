@@ -1,6 +1,6 @@
 # Tekton Pipelines
 
-This chart installs Tekton Pipelines.
+This chart installs Tekton Pipelines 0.3.1.
 
 ## Introduction
 
@@ -10,7 +10,7 @@ This chart installs Tekton Pipelines.
 
 In its default configuration, this chart will create the following Kubernetes resources:
 
-- Tekton Piplines:
+- Tekton Pipelines:
     - Deployments: tekton-pipelines-controller, tekton-pipelines-webhook
     - Service: tekton-pipelines-controller, tekton-pipelines-webhook
     - ServiceAccount: tekton-pipelines-controller
@@ -63,7 +63,9 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Limitations
 
-Look inside each subchart to view the their limitations.
+Currently this chart does not support multiple installs of Tekton, upgrades or rollbacks.
+
+You must install Tekton using the `tekton-pipelines` namespace.
 
 ## Documentation
 
@@ -74,7 +76,6 @@ To learn more about Tekton in general, see the [Tekton Documentation](https://gi
 If you're a developer, operator, or contributor trying to use Tekton Pipelines, the
 following resources are available for you:
 
-- [Tekton/Knative Users](https://groups.google.com/forum/#!forum/knative-users)
-- [Tekton Developers](https://github.com/tektoncd/pipeline/tree/master/docs/developers)
+- [Tekton Developers](https://groups.google.com/forum/#!forum/tekton-dev)
 
-For contributors to tekton-pipelines, we also have [Tekton Slack](https://tektoncd.slack.com).
+For contributors to tekton-pipelines, we also have [Tekton Slack](https://join.slack.com/t/tektoncd/shared_invite/enQtNjE4MDgwMDYxNjA3LTM5Mjc1YWQyN2FjNDhkZDU5NmNmMTZhMDkxZDE4NzE1ZjhjOWU5OTIzNDM5YmQ3NjU5OTFhYzc0M2JmYjg5Mzc).
