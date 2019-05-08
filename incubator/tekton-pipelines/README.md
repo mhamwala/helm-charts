@@ -23,7 +23,12 @@ In its default configuration, this chart will create the following Kubernetes re
 
 Please ensure that you have reviewed the [prerequisites](#prerequisites).
 
-1. Install the chart using helm cli:
+1. Install Tekton-Pipeline crds
+```bash
+$ kubectl apply -f https://raw.githubusercontent.com/helm/charts/d48c4707d955b4ec2b4a48fb76cd76c3cadd72ba/incubator/tekton-pipelines/all-crds.yaml
+```
+
+2. Install the chart using helm cli:
 
 ```bash
 $ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
@@ -54,7 +59,12 @@ $ helm status <my-release> [--tls]
 
 ## Uninstalling the Chart
 
-To uninstall/delete the deployment:
+1. Uninstall Tekton-Pipeline crds
+```bash
+$ kubectl delete -f https://raw.githubusercontent.com/helm/charts/d48c4707d955b4ec2b4a48fb76cd76c3cadd72ba/incubator/tekton-pipelines/all-crds.yaml
+```
+
+2. To uninstall/delete the deployment:
 ```bash
 $ helm delete <my-release> --purge [--tls]
 ```
